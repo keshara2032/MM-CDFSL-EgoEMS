@@ -34,7 +34,7 @@ Please follow the data structure as detailed in [DATA_STRUCTURE.md](https://gith
 You can download the pre-processed data from the [hub](https://huggingface.co/datasets/masashi-hatano/MM-CDFSL/tree/main).
 
 ## 📍 Model Zoo
-You can brouse the checkpoints of pre-trained model, comparison methods, and our models in this [folder](https://keio.box.com/s/ltyp8yksxa9nuyx77f5ma6bxbv7s8389) or directly download from the following links.
+You can brouse the checkpoints of pre-trained model, comparison methods, and our models in this [folder](https://keiojp0-my.sharepoint.com/:f:/g/personal/hatano1210_keio_jp/EoqKPBpzMDRAqalq6m2zjvEBdOywFzpMnW6CwWfeTNb95A?e=4ZQctt) or directly download from the following links.
 
 ### Pre-Train
 
@@ -42,17 +42,17 @@ You can brouse the checkpoints of pre-trained model, comparison methods, and our
 
 |  Method  | Source Dataset | Target Dataset | Modality | Ckpt |
 | :------: | :------------: | :------------: | :------: | :--: |
-| VideoMAE | Kinetics-400 | - | RGB | [checkpoint](https://keio.box.com/shared/static/k71pgayzc4kkbe3n98tc4atakj8d04f0.pth) |
-| VideoMAE | Ego4D | - | RGB | [checkpoint](https://keio.box.com/shared/static/svebiau84n32kl9cl4s1lov3zjipb0v1.pt) |
-| VideoMAE w/ classifier | Ego4D | EPIC | RGB | [checkpoint](https://keio.box.com/shared/static/9pr0o9jtxv7i6azwpjss2vjhhfgvtaco.pt) |
-| VideoMAE w/ classifier | Ego4D | EPIC | flow | [checkpoint](https://keio.box.com/shared/static/e20y6fx4pva1i0mcvv11q3lgqhoixmal.pt) |
-| VideoMAE w/ classifier | Ego4D | EPIC | pose | [checkpoint](https://keio.box.com/shared/static/8i7k76vimvnxo6r6pwtpjiai83qy8cx3.pt) |
-| VideoMAE w/ classifier | Ego4D | MECCANO | RGB | [checkpoint](https://keio.box.com/shared/static/l44k9dmebz5ft4pos6kznfbshpbnn306.pt) |
-| VideoMAE w/ classifier | Ego4D | MECCANO | flow | [checkpoint](https://keio.box.com/shared/static/c07ugtpkjcg5010dc9c12qjt7ylialic.pt) |
-| VideoMAE w/ classifier | Ego4D | MECCANO | pose | [checkpoint](https://keio.box.com/shared/static/54dno3qfm6brke5iidls94cmtk1asdb9.pt) |
-| VideoMAE w/ classifier | Ego4D | WEAR | RGB | [checkpoint](https://keio.box.com/shared/static/q2ckke6wmyufgay0o4t95z7bkovg86bz.pt) |
-| VideoMAE w/ classifier | Ego4D | WEAR | flow | [checkpoint](https://keio.box.com/shared/static/vzq5spkm0xeldkov73p8gbhj26yyctjj.pt) |
-| VideoMAE w/ classifier | Ego4D | WEAR | pose | [checkpoint](https://keio.box.com/shared/static/8w85fkc1nlwbgapuuxupzov3cd0v14dx.pt) |
+| VideoMAE | Kinetics-400 | - | RGB | [checkpoint](https://keiojp0-my.sharepoint.com/:u:/g/personal/hatano1210_keio_jp/EXaK54A5D7RBkCT4S7ARcNYBtUfb2P3K0AApujNuHBy6Ig?e=IzEwXK) |
+| VideoMAE | Ego4D | - | RGB | [checkpoint](https://keiojp0-my.sharepoint.com/:u:/g/personal/hatano1210_keio_jp/EbsfvRKG-0BJiTda6-NViN0BIbft7lMmJ24lrqgBT9XvHA?e=yr3rkR) |
+| VideoMAE w/ classifier | Ego4D | EPIC | RGB | [checkpoint](https://keiojp0-my.sharepoint.com/:u:/g/personal/hatano1210_keio_jp/EdbvlOrr8ZdFjEtBO0q0i_QBtKS8t8UijQFP3eceZKsaEw?e=XzU9ZJ) |
+| VideoMAE w/ classifier | Ego4D | EPIC | flow | [checkpoint](https://keiojp0-my.sharepoint.com/:u:/g/personal/hatano1210_keio_jp/EWBJmu4hY6ZGq-DVdi6j2YcBZmIc8VZgwxcJXpqtLjqZVA?e=tkfUY3) |
+| VideoMAE w/ classifier | Ego4D | EPIC | pose | [checkpoint](https://keiojp0-my.sharepoint.com/:u:/g/personal/hatano1210_keio_jp/EfR3OzJdiM5KhV9okCp2EPABLW0fps2u9ae2V-MpNA0iaA?e=pPtyyK) |
+| VideoMAE w/ classifier | Ego4D | MECCANO | RGB | [checkpoint](https://keiojp0-my.sharepoint.com/:u:/g/personal/hatano1210_keio_jp/ERWg5T4tvdxCirQeHvYowRABVMzY6SuLSoA-K9bBOE9fQw?e=wWFo1m) |
+| VideoMAE w/ classifier | Ego4D | MECCANO | flow | [checkpoint](https://keiojp0-my.sharepoint.com/:u:/g/personal/hatano1210_keio_jp/EaTh3eApwkJPl2_yyZQNrfwBGkDGflCOKPYqDQjiePclVQ?e=ZpXY7E) |
+| VideoMAE w/ classifier | Ego4D | MECCANO | pose | [checkpoint](https://keiojp0-my.sharepoint.com/:u:/g/personal/hatano1210_keio_jp/ESHqY2VvflxCtLBulultKFkB4idHAxoGj2vJKSnWShx5wQ?e=EqdJSl) |
+| VideoMAE w/ classifier | Ego4D | WEAR | RGB | [checkpoint](https://keiojp0-my.sharepoint.com/:u:/g/personal/hatano1210_keio_jp/EW6x78JK9qRCnl61BbpLFGIBWufJWzo36yzk1Hpmq1ngcA?e=NxXq23) |
+| VideoMAE w/ classifier | Ego4D | WEAR | flow | [checkpoint](https://keiojp0-my.sharepoint.com/:u:/g/personal/hatano1210_keio_jp/ESyhgb-YVJNBtFXTRuuLHoQBVuPANrK06H9hoIzd0sCbcQ?e=DTrAp2) |
+| VideoMAE w/ classifier | Ego4D | WEAR | pose | [checkpoint](https://keiojp0-my.sharepoint.com/:u:/g/personal/hatano1210_keio_jp/EcLT4rjhtZBKoykNxeTtKEoBN0hSDxW18zcYAZe5LgV--A?e=GPUU44) |
 
 </div>
 
@@ -63,18 +63,18 @@ You can brouse the checkpoints of pre-trained model, comparison methods, and our
 
 |  Method  | Source Dataset | Target Dataset | Modality | Ckpt |
 | :------: | :------------: | :------------: | :------: | :--: |
-| STARTUP++ | Ego4D | EPIC | RGB | [checkpoint](https://keio.box.com/shared/static/henl7rx9dknc28yty1d8veaee4la6axg.pt) |
-| STARTUP++ | Ego4D | MECCANO | RGB | [checkpoint](https://keio.box.com/shared/static/8v0aesw4adj5vgecykqj77korq5kqsc6.pt) |
-| STARTUP++ | Ego4D | WEAR | RGB | [checkpoint](https://keio.box.com/shared/static/sz8veo961xaorqlc9yjcf7h59pzyl3pg.pt) |
-| Dynamic Distill++ | Ego4D | EPIC | RGB | [checkpoint](https://keio.box.com/shared/static/n9djko04ckzrk45j3m06cabtgm6wvm8p.pt) |
-| Dynamic Distill++ | Ego4D | MECCANO | RGB | [checkpoint](https://keio.box.com/shared/static/ay40mcw5cr1i4rihqu8gaav2k2k2lad2.pt) |
-| Dynamic Distill++ | Ego4D | WEAR | RGB | [checkpoint](https://keio.box.com/shared/static/nvv0otmgjqfbuui2ce0hx8h1uo44ssko.pt) |
-| CDFSL-V | Ego4D | EPIC | RGB | [checkpoint](https://keio.box.com/shared/static/nx8lt1aghlqfp6ay15st5e31g8x9k7l7.pt) |
-| CDFSL-V | Ego4D | MECCANO | RGB | [checkpoint](https://keio.box.com/shared/static/u6t2lg092wvbwgri9zdie314ye0ujpdt.pt) |
-| CDFSL-V | Ego4D | WEAR | RGB | [checkpoint](https://keio.box.com/shared/static/84c262upfhmagln06k4znscoggt2dag2.pt) |
-| Ours | Ego4D | EPIC | RGB, flow, pose | [checkpoint](https://keio.box.com/shared/static/u2mig7f0lsyqjztljszema38oi09ub6t.pt) |
-| Ours | Ego4D | MECCANO | RGB, flow, pose | [checkpoint](https://keio.box.com/shared/static/39cs8ug82i2ufoncwx6dayds6bfrrp18.pt) |
-| Ours | Ego4D | WEAR | RGB, flow, pose | [checkpoint](https://keio.box.com/shared/static/yxzzrj1j2mno0e06p4l0gfcbti45kbb3.pt) |
+| STARTUP++ | Ego4D | EPIC | RGB | [checkpoint](https://keiojp0-my.sharepoint.com/:u:/g/personal/hatano1210_keio_jp/EZ1U6bqBp8hHgCUC0Xe47aMBfaIcDh3t4vztqfoz62ZJZg?e=SmjJV6) |
+| STARTUP++ | Ego4D | MECCANO | RGB | [checkpoint](https://keiojp0-my.sharepoint.com/:u:/g/personal/hatano1210_keio_jp/ETa92sOiNYZJtV5j-sa20QUBrKPumQY-Vau-fg8jpz2qKA?e=3SOobP) |
+| STARTUP++ | Ego4D | WEAR | RGB | [checkpoint](https://keiojp0-my.sharepoint.com/:u:/g/personal/hatano1210_keio_jp/EXsICTNcFNZCkS7iBsdfR5EB_UK3MAQRTlxasEjVCIglxQ?e=jLkCZe) |
+| Dynamic Distill++ | Ego4D | EPIC | RGB | [checkpoint](https://keiojp0-my.sharepoint.com/:u:/g/personal/hatano1210_keio_jp/EctXZUmdEmlElij5DSQN7VUBJGHWKaAEf0J6BopgRdXNNA?e=gwHLf1) |
+| Dynamic Distill++ | Ego4D | MECCANO | RGB | [checkpoint](https://keiojp0-my.sharepoint.com/:u:/g/personal/hatano1210_keio_jp/EVP8YSbPhKNFthpaRJ-VsesBSOyfixyPQYB3TBL8jsHI9Q?e=GZBLKM) |
+| Dynamic Distill++ | Ego4D | WEAR | RGB | [checkpoint](https://keiojp0-my.sharepoint.com/:u:/g/personal/hatano1210_keio_jp/Ec5U1DltaXFFvzauQxS9280Bo6vjPXDtqXlMGsb7ToUCGQ?e=Q9jMoe) |
+| CDFSL-V | Ego4D | EPIC | RGB | [checkpoint](https://keiojp0-my.sharepoint.com/:u:/g/personal/hatano1210_keio_jp/EdhYd-oNWtpGqqBKgcNydJQByUTpEhrZMNd7hgpTRtikJw?e=4CaDc6) |
+| CDFSL-V | Ego4D | MECCANO | RGB | [checkpoint](https://keiojp0-my.sharepoint.com/:u:/g/personal/hatano1210_keio_jp/ERZ-1-p89qNDuYI_HFn7pVwBRPXAodkvkftDAHdRf5semQ?e=8NpMeL) |
+| CDFSL-V | Ego4D | WEAR | RGB | [checkpoint](https://keiojp0-my.sharepoint.com/:u:/g/personal/hatano1210_keio_jp/EeliefqhUypBhvd0kmv7oDoB5uxRty80PG3NzR9VmuRu9Q?e=8uSndq) |
+| Ours | Ego4D | EPIC | RGB, flow, pose | [checkpoint](https://keiojp0-my.sharepoint.com/:u:/g/personal/hatano1210_keio_jp/Edy0Y9TM3P9PgCtEVUxsd8IBSU8ev02kcVjr1TqNEFZX5w?e=bQMbk8) |
+| Ours | Ego4D | MECCANO | RGB, flow, pose | [checkpoint](https://keiojp0-my.sharepoint.com/:u:/g/personal/hatano1210_keio_jp/EYW6FcUc0mhOghEy-rK3fHQBPLbnQvzz2p6FjK9cSz_LAw?e=Abcr1b) |
+| Ours | Ego4D | WEAR | RGB, flow, pose | [checkpoint](https://keiojp0-my.sharepoint.com/:u:/g/personal/hatano1210_keio_jp/EXz18Z6qbolIhUIvbqTpzqEBxQ8Z7PU0du_xe5reNtdhOw?e=qWD3sT) |
 
 </div>
 
