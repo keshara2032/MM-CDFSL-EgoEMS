@@ -32,15 +32,16 @@ except ImportError as e:
     print("ERROR: This script needs OpenCV (pip install opencv-python).", file=sys.stderr)
     raise
 
+SPLIT_NAME = "train" # train or val
+
 # --------- CONFIG ---------
-VAL_ROOT = Path("/standard/UVA-DSA/NIST EMS Project Data/EgoExoEMS_CVPR2025/Dataset/TimeSformer_Format/ego/val_root")
-OUTPUT_JSON = Path("../cdfsl/target/egoems/ego_val_mm_cdfsl.json")
+DATA_ROOT = Path(f"/standard/UVA-DSA/NIST EMS Project Data/EgoExoEMS_CVPR2025/Dataset/TimeSformer_Format/ego/{SPLIT_NAME}_root")
+OUTPUT_JSON = Path(f"../cdfsl/target/egoems/annotations/ego_{SPLIT_NAME}_mm_cdfsl.json")
 # make sure directory exists output
 if not OUTPUT_JSON.parent.exists():
     OUTPUT_JSON.parent.mkdir(parents=True, exist_ok=True)
 
 
-SPLIT_NAME = "val"
 DESCRIPTION = "EgoEMS few-shot style JSON generated from pre-segmented clips"
 VERSION = 1.0
 
@@ -111,7 +112,7 @@ def main():
     
     unique_action_ids = set()
 
-    for mp4 in sorted(VAL_ROOT.glob(GLOB)):
+    for mp4 in sorted(DATA_ROOT.glob(GLOB)):
         stem = mp4.stem  # e.g., ng3_cardiac_arrest_t11_ks11_81.297_83.901_ego
         participant_id, action_idx, start_sec, end_sec = parse_from_filename(stem)
         
