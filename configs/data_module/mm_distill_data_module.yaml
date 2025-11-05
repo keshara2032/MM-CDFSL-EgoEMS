@@ -1,13 +1,14 @@
 defaults:
   - _self_
-  - dataset: epic  # epic, meccano, wear
+  - dataset: egoems  # epic, meccano, wear, egoems
 
 # Augmentation parameters
 color_jitter: 0.0
 train_interpolation: bicubic
 
 # Modality parameters
-mode: ['RGB', 'flow', 'pose']
+# mode: ['RGB', 'flow', 'pose']
+mode: ['RGB'] # only for EgoEMS
 mean: [
   [0.485, 0.456, 0.406],
   [0.0507, 0.4671],
@@ -47,9 +48,9 @@ num_classes_action: 204 # ego4d: 204, epic: 228
 num_classes_verb: 33 # ego4d: 33, epic: 27
 num_classes_noun: 66 # ego4d: 66, epic: 89
 
-n_way: 5
+n_way: 20
 k_shot: 5
-q_sample: 15
+q_sample: 11
 episodes: 600
 
 # Delete video (Ego4D)

@@ -3,3 +3,6 @@
 __pycache__
 .vscode
 /mm-cdfsl
+**logs
+checkpoints
+tools/*.txt

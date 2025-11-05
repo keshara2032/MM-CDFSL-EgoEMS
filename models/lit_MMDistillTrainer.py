@@ -22,6 +22,7 @@ class MMDistillTrainer(pl.LightningModule):
     def __init__(self, cfg):
         super(MMDistillTrainer, self).__init__()
         self.cfg = cfg
+        print(f"Initializing MMDistillTrainer with config: {self.cfg}"  )
         # model
         self.student_rgb = get_model(
             cfg,
@@ -300,9 +301,19 @@ class MMDistillTrainer(pl.LightningModule):
         print("Batch size = %d" % self.total_batch_size)
 
     def preprocess_frames(self, frames, n_way, k_shot, q_sample):
-        frames = rearrange(
-            frames, "(n m) c t h w -> n m c t h w", n=n_way, m=(k_shot + q_sample)
-        )
+        # frames = rearrange(
+        #     frames, "(n m) c t h w -> n m c t h w", n=n_way, m=(k_shot + q_sample)
+        # )
+        b, c, t, h, w = frames.shape
+        n = self.cfg.data_module.n_way
+        rem = b % n
+        if rem != 0:
+            # drop extras deterministically
+            frames = frames[: b - rem]
+            b = frames.shape[0]
+        m_actual = b // n
+        frames = rearrange(frames, '(n m) c t h w -> n m c t h w', n=n, m=m_actual)
+
 
         support_frames = rearrange(
             frames[:, :k_shot],

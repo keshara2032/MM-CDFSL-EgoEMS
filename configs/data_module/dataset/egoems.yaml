@@ -1,0 +1,7 @@
+# Target Dataset
+# EPIC
+target_dataset: EgoEMS
+target_data_dir: /standard/UVA-DSA/NIST EMS Project Data/EgoExoEMS_CVPR2025/Dataset/MM-CDFSL_Format/Test/
+fewshot_eval_json_path: /standard/UVA-DSA/Keshara/MM-CDFSL/cdfsl/target/egoems/annotations/ego_val_mm_cdfsl.json
+unlabel_json_path: /standard/UVA-DSA/Keshara/MM-CDFSL/cdfsl/target/egoems/annotations/ego_val_mm_cdfsl.json
+target_sampling_rate: 8

@@ -1,9 +1,9 @@
 # Model parameters
 model: videomae_classifier_small_patch16_224
 ckpt_path: [
-  /path/to/pretrain/rgb.pt,
-  /path/to/pretrain/flow.pt,
-  /path/to/pretrain/pose.pt
+  /standard/UVA-DSA/Keshara/MM-CDFSL/checkpoints/videomae_ego4d-epic_RGB.pt,
+  /standard/UVA-DSA/Keshara/MM-CDFSL/checkpoints/videomae_ego4d-epic_flow.pt,
+  /standard/UVA-DSA/Keshara/MM-CDFSL/checkpoints/videomae_ego4d-epic_pose.pt
 ]
 in_chans: [3, 2, 21]
 use_mean_pooling: True

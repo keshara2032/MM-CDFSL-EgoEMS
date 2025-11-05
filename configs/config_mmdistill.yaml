@@ -13,7 +13,7 @@ dirpath: checkpoints/
 train: True
 test: False
 accelerator: gpu
-devices: [0, 1]
+devices: [0] # add more GPU ids for multiple GPU training
 strategy: deepspeed
 ckpt_path:
 
