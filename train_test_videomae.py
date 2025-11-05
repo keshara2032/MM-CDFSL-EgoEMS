@@ -7,6 +7,7 @@ from types import SimpleNamespace
 import torch
 import torch.nn as nn
 from torch.utils.data import Dataset, DataLoader
+from sklearn.metrics import precision_score, recall_score, f1_score
 from PIL import Image
 
 # Repo imports
@@ -194,15 +195,51 @@ def train_one_epoch(model, loader, optimizer, scaler, device, log_interval=50):
 def evaluate(model, loader, device):
     model.eval()
     total = 0
-    correct = 0
+    correct1 = 0
+    correct5 = 0
+    y_true = []
+    y_pred = []
+
     for x, y in loader:
         x = x.to(device, non_blocking=True)
         y = y.to(device, non_blocking=True)
         _, logits = model(x, mask=None)
-        pred = logits.argmax(dim=1)
+
+        # Top-1
+        pred1 = logits.argmax(dim=1)
+        correct1 += (pred1 == y).sum().item()
+
+        # Top-5
+        k = min(5, logits.size(1))
+        topk = logits.topk(k=k, dim=1).indices
+        correct5 += sum([yi in topk_i for yi, topk_i in zip(y.tolist(), topk.tolist())])
+
         total += x.size(0)
-        correct += (pred == y).sum().item()
-    return correct / max(1, total)
+        y_true.extend(y.tolist())
+        y_pred.extend(pred1.tolist())
+
+    top1 = correct1 / max(1, total)
+    top5 = correct5 / max(1, total)
+
+    # Macro averages across classes; micro also reported
+    precision_macro = precision_score(y_true, y_pred, average="macro", zero_division=0)
+    recall_macro = recall_score(y_true, y_pred, average="macro", zero_division=0)
+    f1_macro = f1_score(y_true, y_pred, average="macro", zero_division=0)
+
+    precision_micro = precision_score(y_true, y_pred, average="micro", zero_division=0)
+    recall_micro = recall_score(y_true, y_pred, average="micro", zero_division=0)
+    f1_micro = f1_score(y_true, y_pred, average="micro", zero_division=0)
+
+    return {
+        "top1": top1,
+        "top5": top5,
+        "precision_macro": precision_macro,
+        "recall_macro": recall_macro,
+        "f1_macro": f1_macro,
+        "precision_micro": precision_micro,
+        "recall_micro": recall_micro,
+        "f1_micro": f1_micro,
+    }
 
 
 def main():
@@ -296,12 +333,24 @@ def main():
     for epoch in range(1, args.epochs + 1):
         print(f"\nEpoch {epoch}/{args.epochs}")
         train_loss, train_acc = train_one_epoch(model, dl_train, optimizer, scaler, device)
-        test_acc = evaluate(model, dl_test, device)
-        print(f"Train loss {train_loss:.4f} | Train acc {train_acc*100:.2f}% | Test acc {test_acc*100:.2f}%")
+        metrics = evaluate(model, dl_test, device)
+        print(
+            " | ".join(
+                [
+                    f"Train loss {train_loss:.4f}",
+                    f"Train acc {train_acc*100:.2f}%",
+                    f"Top-1 {metrics['top1']*100:.2f}%",
+                    f"Top-5 {metrics['top5']*100:.2f}%",
+                    f"F1(macro) {metrics['f1_macro']*100:.2f}%",
+                    f"Prec(macro) {metrics['precision_macro']*100:.2f}%",
+                    f"Rec(macro) {metrics['recall_macro']*100:.2f}%",
+                ]
+            )
+        )
 
         # Save best
-        if test_acc > best_acc:
-            best_acc = test_acc
+        if metrics["top1"] > best_acc:
+            best_acc = metrics["top1"]
             best_path = os.path.join(args.save_dir, f"videomae_best_acc_{best_acc:.4f}.pt")
             torch.save({"state_dict": model.state_dict(), "num_classes": num_classes}, best_path)
             print(f"Saved new best to {best_path}")
@@ -311,9 +360,8 @@ def main():
     torch.save({"state_dict": model.state_dict(), "num_classes": num_classes}, final_path)
     print(f"Final checkpoint: {final_path}")
     if best_path:
-        print(f"Best test acc: {best_acc*100:.2f}% at {best_path}")
+        print(f"Best Top-1: {best_acc*100:.2f}% at {best_path}")
 
 
 if __name__ == "__main__":
     main()
-
